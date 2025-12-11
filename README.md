@@ -157,6 +157,28 @@ Several meaningful insights were obtained from the analysis:
 
 ---
 
+## Data Loading and ETL Workflow
+
+The project includes a simple but effective ETL workflow implemented entirely in SQL Server.
+
+1. **Extract**
+   Data is stored in CSV files (`authors.csv`, `books.csv`, `members.csv`, `branches.csv`, `borrowings.csv`) inside the project directory.
+
+2. **Transform**
+   Basic transformations, such as skipping headers, handling row terminators, and mapping data types, are applied during the load process.
+
+3. **Load**
+   SQL Server’s high-performance `BULK INSERT` is used to load millions of records efficiently.
+   The entire process is defined in:
+
+   ```
+   Load Data.sql
+   ```
+
+This ETL setup allows the database to be rebuilt from scratch at any time by running the schema script followed by the load script, making the project reproducible and easy to extend.
+
+---
+
 ## Business Recommendations
 
 Based on these findings, several improvements are suggested:
@@ -174,7 +196,8 @@ Based on these findings, several improvements are suggested:
 This project highlights practical experience in:
 
 * SQL Server database design
-* Managing large datasets using BULK INSERT
+* ETL pipelines using BULK INSERT
+* Large-scale data handling and performance considerations
 * Writing analytical SQL using joins, aggregates, and window functions
 * Performance-aware query design with indexing
 * Translating analytical insights into recommendations that support business decisions
