@@ -180,5 +180,3 @@ This project highlights practical experience in:
 * Translating analytical insights into recommendations that support business decisions
 
 ---
-
-If you want a downloadable PDF report, a Power BI dashboard, or a refined portfolio write-up, I can prepare that as well.
